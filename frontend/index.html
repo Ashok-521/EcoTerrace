@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoTerrace - Smart Crop Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png">
+    <script src="config.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">EcoTerrace</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#communication-hub">Community</a>
+            <a href="#">About</a>
+            <a href="#">How it Works</a>
+            <a href="#contact">Contact</a>
+            <div class="notification-container">
+                <div class="notification-bell" onclick="toggleNotifications()">
+                    🔔
+                    <span class="notification-count" id="notification-count">0</span>
+                </div>
+                <div class="notification-dropdown" id="notification-dropdown">
+                    <div class="notification-header">
+                        <h4>Notifications</h4>
+                        <button onclick="markAllNotificationsRead()">Mark all read</button>
+                    </div>
+                    <div class="notification-list" id="notification-list">
+                        <p class="no-notifications">No new notifications</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Grow the Perfect Crop on Your Terrace</h1>
+        <p>Get AI-powered crop recommendations based on your terrace conditions and weather.</p>
+        <a href="#input-form" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose EcoTerrace?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>🌱 Smart Recommendations</h3>
+                    <p>AI-powered suggestions based on your location, soil type, and weather conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌤️ Weather Integration</h3>
+                    <p>Real-time weather data ensures your crops thrive in current conditions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Community Support</h3>
+                    <p>Connect with fellow gardeners, share experiences, and get expert advice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="success-stories">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story">
+                    <h3>"My tomatoes never grew better!"</h3>
+                    <p>- Priya, Mumbai</p>
+                </div>
+                <div class="story">
+                    <h3>"Saved 3 months of trial and error"</h3>
+                    <p>- Rahul, Bangalore</p>
+                </div>
+                <div class="story">
+                    <h3>"Perfect for beginners like me"</h3>
+                    <p>- Anjali, Delhi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Input Form -->
+    <section class="input-section" id="input-form">
+        <h2>Tell us about your terrace</h2>
+        <form>
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" placeholder="Enter your city" required>
+
+            <label for="size">Terrace Size (sq. ft):</label>
+            <input type="number" id="size" name="size" placeholder="e.g., 100" required>
+
+            <label for="soil">Soil Type:</label>
+            <select id="soil" name="soil">
+                <option value="sandy">Sandy</option>
+                <option value="loamy">Loamy</option>
+                <option value="clay">Clay</option>
+            </select>
+
+            <label for="sunlight">Sunlight Exposure:</label>
+            <select id="sunlight" name="sunlight">
+                <option value="full">Full Sun</option>
+                <option value="partial">Partial Shade</option>
+                <option value="shade">Shade</option>
+            </select>
+
+            <label for="crop">Preferred Crop Type:</label>
+            <select id="crop" name="crop">
+                <option value="vegetables">Vegetables</option>
+                <option value="fruits">Fruits</option>
+                <option value="herbs">Herbs</option>
+                <option value="flowers">Flowers</option>
+            </select>
+
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        <!-- Results Section -->
+        <div id="results" style="margin-top:20px;"></div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How EcoTerrace Works</h2>
+            <p>Get personalized crop recommendations in 4 simple steps</p>
+            
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Enter Your Details</h3>
+                    <p>Tell us about your terrace location, size, soil type, and sunlight conditions.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Weather Analysis</h3>
+                    <p>We analyze real-time weather data for your location to ensure optimal growing conditions.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>AI Recommendations</h3>
+                    <p>Our algorithm suggests the best crops based on your conditions and current weather.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Join Community</h3>
+                    <p>Connect with other gardeners, share experiences, and get ongoing support.</p>
+                </div>
+            </div>
+            
+            <div class="cta-section">
+                <h3>Ready to Start Your Terrace Garden?</h3>
+                <p>Join thousands of successful urban gardeners using EcoTerrace</p>
+                <a href="#input-form" class="cta-button">Get Started Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>About EcoTerrace</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Making Urban Gardening Simple</h3>
+                    <p>EcoTerrace was born from a simple idea: everyone should be able to grow their own food, regardless of space limitations. We combine technology with agricultural science to help urban dwellers create thriving terrace gardens.</p>
+                    
+                    <h3>Our Mission</h3>
+                    <p>To promote sustainable urban living by making terrace gardening accessible, enjoyable, and successful for everyone.</p>
+                    
+                    <h3>Why Trust Us?</h3>
+                    <ul>
+                        <li>✅ Science-based recommendations</li>
+                        <li>✅ Real-time weather integration</li>
+                        <li>✅ Community-driven support</li>
+                        <li>✅ Proven success stories</li>
+                    </ul>
+                </div>
+                <div class="about-stats">
+                    <div class="stat">
+                        <h4>10,000+</h4>
+                        <p>Happy Gardeners</p>
+                    </div>
+                    <div class="stat">
+                        <h4>50+</h4>
+                        <p>Crop Varieties</p>
+                    </div>
+                    <div class="stat">
+                        <h4>25+</h4>
+                        <p>Indian Cities</p>
+                    </div>
+                    <div class="stat">
+                        <h4>95%</h4>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>We're Here to Help</h3>
+                    <p>Have questions about terrace gardening? Need expert advice? We're just a message away!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <h4>📧 Email</h4>
+                            <p>support@ecoterrace.in</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📞 Phone</h4>
+                            <p>+91 98765 43210</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>📍 Location</h4>
+                            <p>Bangalore, India</p>
+                        </div>
+                        <div class="contact-item">
+                            <h4>⏰ Hours</h4>
+                            <p>Mon-Sat: 9AM-6PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <select>
+                            <option value="">Select Topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="gardening">Gardening Advice</option>
+                            <option value="feedback">Feedback</option>
+                        </select>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 EcoTerrace. All rights reserved.</p>
+    </footer>
+
+    <!-- Communication Hub Section -->
+    <section class="communication-hub" id="communication-hub">
+        <div class="container">
+            <h2>Community Hub</h2>
+            <p>Connect with fellow gardeners, share your experiences, and get expert advice!</p>
+            
+            <!-- Tab Navigation -->
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('forum')">Forum</button>
+                <button class="tab-btn" onclick="showTab('messages')">Messages</button>
+                <button class="tab-btn" onclick="showTab('garden')">Garden</button>
+                <button class="tab-btn" onclick="showTab('guides')">Guides</button>
+                <button class="tab-btn" onclick="showTab('marketplace')">Marketplace</button>
+                <button class="tab-btn" onclick="showTab('journal')">Journal</button>
+            </div>
+
+            <!-- Forum Tab -->
+            <div id="forum-tab" class="tab-content active">
+                <div class="forum-section">
+                    <h3>Discussion Forum</h3>
+                    
+                    <!-- Category Filter -->
+                    <div class="category-filter">
+                        <label>Filter by category:</label>
+                        <select id="category-filter" onchange="filterPosts()">
+                            <option value="">All Categories</option>
+                            <option value="general">General</option>
+                            <option value="tips">Growing Tips</option>
+                            <option value="problems">Plant Problems</option>
+                            <option value="harvest">Harvesting</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Create Post -->
+                    <div class="create-post">
+                        <h4>Share Your Experience</h4>
+                        <form id="post-form">
+                            <input type="text" id="post-title" placeholder="Give your post a title" required>
+                            <select id="post-category">
+                                <option value="general">General Discussion</option>
+                                <option value="tips">Growing Tips</option>
+                                <option value="problems">Plant Problems</option>
+                                <option value="harvest">Harvesting & Recipes</option>
+                            </select>
+                            <textarea id="post-content" placeholder="Share your experience, ask questions, or help others..." required></textarea>
+                            <button type="submit">Post to Community</button>
+                        </form>
+                    </div>
+
+                    <!-- Posts List -->
+                    <div id="posts-list"></div>
+                </div>
+            </div>
+
+            <!-- Messages Tab -->
+            <div id="messages-tab" class="tab-content">
+                <div class="messages-section">
+                    <h3>Private Messages</h3>
+                    
+                    <!-- Send Message -->
+                    <div class="send-message">
+                        <h4>Send a Message</h4>
+                        <form id="message-form">
+                            <input type="number" id="receiver-id" placeholder="User ID (for demo, use 1 or 2)" required>
+                            <textarea id="message-content" placeholder="Type your message here..." required></textarea>
+                            <button type="submit">Send Message</button>
+                        </form>
+                    </div>
+
+                    <!-- Messages List -->
+                    <div id="messages-list"></div>
+                </div>
+            </div>
+
+            <!-- Garden Tab -->
+            <div id="garden-tab" class="tab-content">
+                <div class="garden-section">
+                    <h3>My Garden Calendar</h3>
+                    
+                    <!-- Garden Schedule -->
+                    <div class="garden-schedule">
+                        <h4>Planting Schedule</h4>
+                        <form id="schedule-form">
+                            <input type="text" id="crop-name" placeholder="Crop name" required>
+                            <input type="date" id="planting-date" required>
+                            <input type="date" id="harvest-date" placeholder="Expected harvest">
+                            <textarea id="schedule-notes" placeholder="Notes..."></textarea>
+                            <button type="submit">Add to Calendar</button>
+                        </form>
+                    </div>
+
+                    <!-- Care Reminders -->
+                    <div class="care-reminders">
+                        <h4>Plant Care Reminders</h4>
+                        <div id="reminders-list"></div>
+                        
+                        <div class="add-reminder">
+                            <h5>Add Reminder</h5>
+                            <form id="reminder-form">
+                                <select id="reminder-type">
+                                    <option value="water">Water</option>
+                                    <option value="fertilize">Fertilize</option>
+                                    <option value="harvest">Harvest</option>
+                                    <option value="pest_control">Pest Control</option>
+                                </select>
+                                <input type="date" id="reminder-date" required>
+                                <textarea id="reminder-notes" placeholder="Reminder notes..."></textarea>
+                                <button type="submit">Add Reminder</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Weather Alerts -->
+                    <div class="weather-alerts">
+                        <h4>Weather Alerts</h4>
+                        <div id="weather-alerts-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guides Tab -->
+            <div id="guides-tab" class="tab-content">
+                <div class="guides-section">
+                    <h3>Crop Growing Guides</h3>
+                    <p>Comprehensive guides for growing different crops successfully!</p>
+                    
+                    <div class="guides-filter">
+                        <input type="text" id="guide-search" placeholder="Search for a crop..." onkeyup="searchGuides()">
+                    </div>
+                    
+                    <div id="guides-list"></div>
+                </div>
+            </div>
+
+            <!-- Marketplace Tab -->
+            <div id="marketplace-tab" class="tab-content">
+                <div class="marketplace-section">
+                    <h3>Garden Marketplace</h3>
+                    <p>Buy and sell seeds, tools, and gardening essentials!</p>
+                    
+                    <!-- Search and Filters -->
+                    <div class="marketplace-filters">
+                        <div class="search-bar">
+                            <input type="text" id="product-search" placeholder="Search products..." onkeyup="searchProducts()">
+                        </div>
+                        <div class="filter-options">
+                            <select id="category-filter" onchange="filterProducts()">
+                                <option value="">All Categories</option>
+                                <option value="seeds">Seeds</option>
+                                <option value="tools">Tools</option>
+                                <option value="soil">Soil</option>
+                                <option value="fertilizer">Fertilizer</option>
+                                <option value="plants">Plants</option>
+                            </select>
+                            <select id="price-filter" onchange="filterProducts()">
+                                <option value="">All Prices</option>
+                                <option value="0-100">Under ₹100</option>
+                                <option value="100-500">₹100-₹500</option>
+                                <option value="500-1000">₹500-₹1000</option>
+                                <option value="1000+">Above ₹1000</option>
+                            </select>
+                            <select id="condition-filter" onchange="filterProducts()">
+                                <option value="">All Conditions</option>
+                                <option value="new">New</option>
+                                <option value="used">Used</option>
+                                <option value="organic">Organic</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Add Product Button -->
+                    <div class="add-product-section">
+                        <button class="add-product-btn" onclick="showAddProductForm()">+ Add Product for Sale</button>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div id="products-grid" class="products-grid"></div>
+                    
+                    <!-- Add Product Form (Hidden by default) -->
+                    <div id="add-product-form" class="add-product-form" style="display: none;">
+                        <h4>List New Product</h4>
+                        <form id="product-form">
+                            <input type="text" id="product-name" placeholder="Product name" required>
+                            <textarea id="product-description" placeholder="Product description" required></textarea>
+                            <input type="number" id="product-price" placeholder="Price (₹)" step="0.01" required>
+                            <select id="product-category" required>
+                                <option value="">Select category</option>
+                                <option value="seeds">Seeds</option>
+                                <option value="tools">Tools</option>
+                                <option value="soil">Soil</option>
+                                <option value="fertilizer">Fertilizer</option>
+                                <option value="plants">Plants</option>
+                            </select>
+                            <select id="product-condition" required>
+                                <option value="">Select condition</option>
+                                <option value="new">New</option>
+                                <option value="used">Used</option>
+                                <option value="organic">Organic</option>
+                            </select>
+                            <input type="number" id="product-quantity" placeholder="Quantity available" required>
+                            <input type="text" id="product-location" placeholder="Your location" required>
+                            <button type="submit">List Product</button>
+                            <button type="button" onclick="hideAddProductForm()">Cancel</button>
+                        </form>
+                    </div>
+
+                    <!-- Shopping Cart -->
+                    <div class="shopping-cart">
+                        <h4>Shopping Cart</h4>
+                        <div id="cart-items" class="cart-items"></div>
+                        <div class="cart-summary">
+                            <strong>Total: ₹<span id="cart-total">0</span></strong>
+                            <button onclick="checkout()">Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Journal Tab -->
+            <div id="journal-tab" class="tab-content">
+                <div class="journal-section">
+                    <h3>Garden Journal</h3>
+                    <p>Document your gardening journey and track your progress!</p>
+                    
+                    <!-- Add Journal Entry -->
+                    <div class="add-journal-entry">
+                        <h4>New Journal Entry</h4>
+                        <form id="journal-form">
+                            <input type="date" id="journal-date" required>
+                            <input type="text" id="journal-title" placeholder="Entry title" required>
+                            <select id="journal-mood">
+                                <option value="">How are you feeling?</option>
+                                <option value="happy">😊 Happy</option>
+                                <option value="concerned">😟 Concerned</option>
+                                <option value="excited">🎉 Excited</option>
+                                <option value="neutral">😐 Neutral</option>
+                            </select>
+                            <textarea id="journal-content" placeholder="What's happening in your garden today?" required></textarea>
+                            <button type="submit">Save Entry</button>
+                        </form>
+                    </div>
+
+                    <!-- Journal Entries -->
+                    <div id="journal-entries"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS to connect frontend with backend -->
+    <script>
+    // Configuration for different environments
+    const config = {
+        development: 'http://127.0.0.1:5000',
+        production: 'http://YOUR_IP_ADDRESS:5000'  // Replace with your IP
+    };
+    
+    // Auto-detect environment or set manually
+    const API_BASE = config.production; // Change to config.development for local only
+    
+    const form = document.querySelector('form');
+    const resultsDiv = document.getElementById('results');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const data = {
+            location: document.getElementById('location').value,
+            size: document.getElementById('size').value,
+            soil: document.getElementById('soil').value,
+            sunlight: document.getElementById('sunlight').value,
+            crop: document.getElementById('crop').value
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/get_recommendation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            resultsDiv.innerHTML = "<h3>Recommended Crops:</h3><ul>" + result.recommended_crops.map(c => `<li>${c}</li>`).join("") + "</ul>";
+        } catch (err) {
+            resultsDiv.innerHTML = "Error connecting to backend.";
+            console.error(err);
+        }
+    });
+
+    // Communication Hub JavaScript
+    let currentUser = 1; // Default user ID (in real app, this would come from authentication)
+
+    // Tab switching
+    function showTab(tabName) {
+        document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(`${tabName}-tab`).classList.add('active');
+        event.target.classList.add('active');
+        
+        if (tabName === 'forum') {
+            loadForumPosts();
+        } else if (tabName === 'messages') {
+            loadMessages();
+        } else if (tabName === 'garden') {
+            loadGardenSchedule();
+            loadReminders();
+            loadWeatherAlerts();
+        } else if (tabName === 'guides') {
+            loadCropGuides();
+        } else if (tabName === 'marketplace') {
+            loadProducts();
+            loadCart();
+        } else if (tabName === 'journal') {
+            loadJournalEntries();
+        }
+    }
+
+    // Filter posts by category
+    function filterPosts() {
+        const category = document.getElementById('category-filter').value;
+        loadForumPosts(category);
+    }
+
+    // Garden Calendar Functions
+    document.getElementById('schedule-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const scheduleData = {
+            user_id: currentUser,
+            crop_name: document.getElementById('crop-name').value,
+            planting_date: document.getElementById('planting-date').value,
+            expected_harvest: document.getElementById('harvest-date').value,
+            notes: document.getElementById('schedule-notes').value
+        };
+        
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/garden/schedules', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(scheduleData)
+            });
+            
+            if (response.ok) {
+                document.getElementById('schedule-form').reset();
+                loadGardenSchedule();
+                alert('Schedule added successfully!');
+            }
+        } catch (err) {
+            console.error('Error creating schedule:', err);
+        }
+    });
+
+    async function loadGardenSchedule() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/garden/schedules?user_id=${currentUser}`);
+            const schedules = await response.json();
+            
+            // Display schedules (you'll need to add the display logic)
+            console.log('Garden schedules:', schedules);
+        } catch (err) {
+            console.error('Error loading schedules:', err);
+        }
+    }
+
+    // Care Reminders Functions
+    document.getElementById('reminder-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const reminderData = {
+            user_id: currentUser,
+            schedule_id: 1, // You'll need to get this from the selected schedule
+            reminder_type: document.getElementById('reminder-type').value,
+            reminder_date: document.getElementById('reminder-date').value,
+            notes: document.getElementById('reminder-notes').value
+        };
+        
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/reminders', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(reminderData)
+            });
+            
+            if (response.ok) {
+                document.getElementById('reminder-form').reset();
+                loadReminders();
+                alert('Reminder added successfully!');
+            }
+        } catch (err) {
+            console.error('Error creating reminder:', err);
+        }
+    });
+
+    async function loadReminders() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/reminders?user_id=${currentUser}`);
+            const reminders = await response.json();
+            
+            const remindersList = document.getElementById('reminders-list');
+            if (reminders.length === 0) {
+                remindersList.innerHTML = '<p>No pending reminders</p>';
+                return;
+            }
+            
+            remindersList.innerHTML = reminders.map(reminder => `
+                <div class="reminder-item">
+                    <strong>${reminder.reminder_type}</strong> - ${new Date(reminder.reminder_date).toLocaleDateString()}
+                    <p>${reminder.notes}</p>
+                    <button onclick="completeReminder(${reminder.id})">Mark Complete</button>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading reminders:', err);
+        }
+    }
+
+    async function completeReminder(reminderId) {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/reminders/${reminderId}/complete`, {
+                method: 'PUT'
+            });
+            
+            if (response.ok) {
+                loadReminders();
+                alert('Reminder marked as complete!');
+            }
+        } catch (err) {
+            console.error('Error completing reminder:', err);
+        }
+    }
+
+    // Weather Alerts Functions
+    async function loadWeatherAlerts() {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/weather/alerts?location=Mumbai');
+            const alerts = await response.json();
+            
+            const alertsList = document.getElementById('weather-alerts-list');
+            if (alerts.length === 0) {
+                alertsList.innerHTML = '<p>No active weather alerts</p>';
+                return;
+            }
+            
+            alertsList.innerHTML = alerts.map(alert => `
+                <div class="alert-item ${alert.severity}">
+                    <strong>${alert.alert_type}</strong> - ${alert.severity.toUpperCase()}
+                    <p>${alert.message}</p>
+                    <small>From: ${new Date(alert.start_date).toLocaleDateString()}</small>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading weather alerts:', err);
+        }
+    }
+
+    // Crop Guides Functions
+    async function loadCropGuides() {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/crops/guides');
+            const guides = await response.json();
+            
+            const guidesList = document.getElementById('guides-list');
+            guidesList.innerHTML = guides.map(guide => `
+                <div class="guide-item">
+                    <h4>${guide.crop_name}</h4>
+                    <p><strong>Season:</strong> ${guide.planting_season}</p>
+                    <p><strong>Growing Time:</strong> ${guide.growing_time_days} days</p>
+                    <p><strong>Difficulty:</strong> ${guide.difficulty_level}</p>
+                    <p><strong>Water:</strong> ${guide.water_frequency}</p>
+                    <p><strong>Sunlight:</strong> ${guide.sunlight_needs}</p>
+                    <details>
+                        <summary>More Details</summary>
+                        <p><strong>Soil:</strong> ${guide.soil_type}</p>
+                        <p><strong>Fertilizer:</strong> ${guide.fertilizer_needs}</p>
+                        <p><strong>Common Pests:</strong> ${guide.common_pests}</p>
+                        <p><strong>Harvesting Tips:</strong> ${guide.harvesting_tips}</p>
+                    </details>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading crop guides:', err);
+        }
+    }
+
+    function searchGuides() {
+        const searchTerm = document.getElementById('guide-search').value.toLowerCase();
+        const guides = document.querySelectorAll('.guide-item');
+        
+        guides.forEach(guide => {
+            const cropName = guide.querySelector('h4').textContent.toLowerCase();
+            guide.style.display = cropName.includes(searchTerm) ? 'block' : 'none';
+        });
+        
+        // If no search term, show all guides
+        if (searchTerm === '') {
+            guides.forEach(guide => {
+                guide.style.display = 'block';
+            });
+        }
+    }
+
+    // Garden Journal Functions
+    document.getElementById('journal-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const journalData = {
+            user_id: currentUser,
+            entry_date: document.getElementById('journal-date').value,
+            title: document.getElementById('journal-title').value,
+            content: document.getElementById('journal-content').value,
+            mood: document.getElementById('journal-mood').value
+        };
+        
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/garden/journal', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(journalData)
+            });
+            
+            if (response.ok) {
+                document.getElementById('journal-form').reset();
+                loadJournalEntries();
+                alert('Journal entry saved!');
+            }
+        } catch (err) {
+            console.error('Error creating journal entry:', err);
+        }
+    });
+
+    async function loadJournalEntries() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/garden/journal?user_id=${currentUser}`);
+            const entries = await response.json();
+            
+            const entriesList = document.getElementById('journal-entries');
+            if (entries.length === 0) {
+                entriesList.innerHTML = '<p>No journal entries yet. Start documenting your garden journey!</p>';
+                return;
+            }
+            
+            entriesList.innerHTML = entries.map(entry => `
+                <div class="journal-entry">
+                    <h4>${entry.title}</h4>
+                    <p class="journal-meta">${new Date(entry.entry_date).toLocaleDateString()} ${entry.mood ? '- ' + entry.mood : ''}</p>
+                    <p>${entry.content}</p>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading journal entries:', err);
+        }
+    }
+
+    // Forum Functions
+    document.getElementById('post-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const postData = {
+            title: document.getElementById('post-title').value,
+            content: document.getElementById('post-content').value,
+            category: document.getElementById('post-category').value,
+            author_id: currentUser
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/forum/posts', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(postData)
+            });
+
+            if (response.ok) {
+                document.getElementById('post-form').reset();
+                loadForumPosts();
+            }
+        } catch (err) {
+            console.error('Error creating post:', err);
+        }
+    });
+
+    async function loadForumPosts(category = '') {
+        try {
+            const url = category ? 
+                `http://127.0.0.1:5000/api/forum/posts?category=${category}` : 
+                'http://127.0.0.1:5000/api/forum/posts';
+            const response = await fetch(url);
+            const posts = await response.json();
+            
+            const postsList = document.getElementById('posts-list');
+            if (posts.length === 0) {
+                postsList.innerHTML = '<p>No posts found. Be the first to share!</p>';
+                return;
+            }
+            
+            postsList.innerHTML = posts.map(post => `
+                <div class="post">
+                    <h4>${post.title}</h4>
+                    <p class="post-meta">By ${post.author?.name || 'Anonymous'} in ${post.category} - ${new Date(post.created_at).toLocaleDateString()}</p>
+                    <p>${post.content}</p>
+                    <div class="post-actions">
+                        <button onclick="loadComments(${post.id})">View Comments (${post.comments?.length || 0})</button>
+                        <button onclick="showCommentForm(${post.id})">Add Comment</button>
+                    </div>
+                    <div id="comments-${post.id}" class="comments-section" style="display: none;"></div>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading posts:', err);
+            document.getElementById('posts-list').innerHTML = '<p>Error loading posts. Please try again.</p>';
+        }
+    }
+
+    function showCommentForm(postId) {
+        const commentsSection = document.getElementById(`comments-${postId}`);
+        commentsSection.style.display = 'block';
+        commentsSection.innerHTML = `
+            <form onsubmit="addComment(event, ${postId})">
+                <textarea placeholder="Add a comment..." required></textarea>
+                <button type="submit">Comment</button>
+            </form>
+        `;
+    }
+
+    async function addComment(event, postId) {
+        event.preventDefault();
+        const content = event.target.querySelector('textarea').value;
+        
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/forum/posts/${postId}/comments`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content: content,
+                    author_id: currentUser
+                })
+            });
+
+            if (response.ok) {
+                loadComments(postId);
+            }
+        } catch (err) {
+            console.error('Error adding comment:', err);
+        }
+    }
+
+    async function loadComments(postId) {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/forum/posts/${postId}/comments`);
+            const comments = await response.json();
+            
+            const commentsSection = document.getElementById(`comments-${postId}`);
+            commentsSection.style.display = 'block';
+            commentsSection.innerHTML = comments.map(comment => `
+                <div class="comment">
+                    <p><strong>${comment.author?.name || 'Anonymous'}:</strong> ${comment.content}</p>
+                    <small>${new Date(comment.created_at).toLocaleDateString()}</small>
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading comments:', err);
+        }
+    }
+
+    // Message Functions
+    document.getElementById('message-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const messageData = {
+            content: document.getElementById('message-content').value,
+            sender_id: currentUser,
+            receiver_id: parseInt(document.getElementById('receiver-id').value)
+        };
+
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/messages', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(messageData)
+            });
+
+            if (response.ok) {
+                document.getElementById('message-form').reset();
+                loadMessages();
+            }
+        } catch (err) {
+            console.error('Error sending message:', err);
+        }
+    });
+
+    async function loadMessages() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/messages/${currentUser}`);
+            const messages = await response.json();
+            
+            const messagesList = document.getElementById('messages-list');
+            messagesList.innerHTML = messages.map(message => `
+                <div class="message ${message.is_read ? 'read' : 'unread'}">
+                    <p><strong>From ${message.sender?.name || 'Unknown'}:</strong> ${message.content}</p>
+                    <small>${new Date(message.created_at).toLocaleDateString()}</small>
+                    ${!message.is_read ? `<button onclick="markAsRead(${message.id})">Mark as Read</button>` : ''}
+                </div>
+            `).join('');
+        } catch (err) {
+            console.error('Error loading messages:', err);
+        }
+    }
+
+    async function markAsRead(messageId) {
+        try {
+            await fetch(`http://127.0.0.1:5000/api/messages/${messageId}/read`, {
+                method: 'PUT'
+            });
+            loadMessages();
+        } catch (err) {
+            console.error('Error marking message as read:', err);
+        }
+    }
+
+    // Notification System
+    let notifications = [];
+    let notificationDropdownOpen = false;
+
+    // Toggle notification dropdown
+    function toggleNotifications() {
+        const dropdown = document.getElementById('notification-dropdown');
+        notificationDropdownOpen = !notificationDropdownOpen;
+        dropdown.style.display = notificationDropdownOpen ? 'block' : 'none';
+        
+        if (notificationDropdownOpen) {
+            loadNotifications();
+        }
+    }
+
+    // Load notifications
+    async function loadNotifications() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/notifications?user_id=${currentUser}`);
+            notifications = await response.json();
+            
+            updateNotificationDisplay();
+            updateNotificationCount();
+        } catch (err) {
+            console.error('Error loading notifications:', err);
+        }
+    }
+
+    // Update notification display
+    function updateNotificationDisplay() {
+        const notificationList = document.getElementById('notification-list');
+        
+        if (notifications.length === 0) {
+            notificationList.innerHTML = '<p class="no-notifications">No new notifications</p>';
+            return;
+        }
+        
+        notificationList.innerHTML = notifications.map(notification => `
+            <div class="notification-item ${notification.is_read ? 'read' : 'unread'}" onclick="markNotificationRead(${notification.id})">
+                <div class="notification-type ${notification.notification_type}">${notification.notification_type}</div>
+                <div class="notification-message">${notification.message}</div>
+                <div class="notification-time">${new Date(notification.created_at).toLocaleString()}</div>
+            </div>
+        `).join('');
+    }
+
+    // Update notification count
+    async function updateNotificationCount() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/notifications/unread/count?user_id=${currentUser}`);
+            const data = await response.json();
+            const countElement = document.getElementById('notification-count');
+            countElement.textContent = data.unread_count;
+            countElement.style.display = data.unread_count > 0 ? 'flex' : 'none';
+        } catch (err) {
+            console.error('Error updating notification count:', err);
+        }
+    }
+
+    // Mark notification as read
+    async function markNotificationRead(notificationId) {
+        try {
+            await fetch(`http://127.0.0.1:5000/api/notifications/${notificationId}/read`, {
+                method: 'PUT'
+            });
+            
+            // Update local notification
+            const notification = notifications.find(n => n.id === notificationId);
+            if (notification) {
+                notification.is_read = true;
+            }
+            
+            updateNotificationDisplay();
+            updateNotificationCount();
+        } catch (err) {
+            console.error('Error marking notification as read:', err);
+        }
+    }
+
+    // Mark all notifications as read
+    async function markAllNotificationsRead() {
+        try {
+            await fetch(`http://127.0.0.1:5000/api/notifications/mark-all-read?user_id=${currentUser}`, {
+                method: 'PUT'
+            });
+            
+            // Update all local notifications
+            notifications.forEach(notification => {
+                notification.is_read = true;
+            });
+            
+            updateNotificationDisplay();
+            updateNotificationCount();
+        } catch (err) {
+            console.error('Error marking all notifications as read:', err);
+        }
+    }
+
+    // Create notification (for testing)
+    async function createTestNotification() {
+        const notificationData = {
+            user_id: currentUser,
+            message: "This is a test notification",
+            notification_type: "reminder"
+        };
+        
+        try {
+            await fetch('http://127.0.0.1:5000/api/notifications', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(notificationData)
+            });
+            
+            loadNotifications();
+        } catch (err) {
+            console.error('Error creating test notification:', err);
+        }
+    }
+
+    // Close notification dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+        const notificationContainer = document.querySelector('.notification-container');
+        if (!notificationContainer.contains(event.target) && notificationDropdownOpen) {
+            document.getElementById('notification-dropdown').style.display = 'none';
+            notificationDropdownOpen = false;
+        }
+    });
+
+    // Auto-refresh notifications every 30 seconds
+    setInterval(updateNotificationCount, 30000);
+
+    // Marketplace Functions
+    let products = [];
+    let cartItems = [];
+
+    // Load products
+    async function loadProducts() {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/products');
+            products = await response.json();
+            displayProducts(products);
+        } catch (err) {
+            console.error('Error loading products:', err);
+        }
+    }
+
+    // Display products
+    function displayProducts(productsToDisplay) {
+        const productsGrid = document.getElementById('products-grid');
+        
+        if (productsToDisplay.length === 0) {
+            productsGrid.innerHTML = '<p>No products found. Be the first to list something!</p>';
+            return;
+        }
+        
+        productsGrid.innerHTML = productsToDisplay.map(product => `
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/200x150?text=${product.name}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h4>${product.name}</h4>
+                    <p class="product-price">₹${product.price}</p>
+                    <p class="product-location">📍 ${product.location}</p>
+                    <p class="product-condition">${product.condition}</p>
+                    <button onclick="addToCart(${product.id})">Add to Cart</button>
+                    <button onclick="viewProduct(${product.id})">View Details</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    // Search products
+    function searchProducts() {
+        const searchTerm = document.getElementById('product-search').value.toLowerCase();
+        const filtered = products.filter(product => 
+            product.name.toLowerCase().includes(searchTerm) || 
+            product.description.toLowerCase().includes(searchTerm)
+        );
+        displayProducts(filtered);
+    }
+
+    // Filter products
+    function filterProducts() {
+        const category = document.getElementById('category-filter').value;
+        const priceRange = document.getElementById('price-filter').value;
+        const condition = document.getElementById('condition-filter').value;
+        
+        let filtered = products;
+        
+        if (category) {
+            filtered = filtered.filter(p => p.category === category);
+        }
+        
+        if (priceRange) {
+            const [min, max] = priceRange.split('-').map(p => p === '+' ? Infinity : parseFloat(p));
+            filtered = filtered.filter(p => p.price >= min && p.price <= max);
+        }
+        
+        if (condition) {
+            filtered = filtered.filter(p => p.condition === condition);
+        }
+        
+        displayProducts(filtered);
+    }
+
+    // Show/hide add product form
+    function showAddProductForm() {
+        document.getElementById('add-product-form').style.display = 'block';
+    }
+
+    function hideAddProductForm() {
+        document.getElementById('add-product-form').style.display = 'none';
+        document.getElementById('product-form').reset();
+    }
+
+    // Add product form handler
+    document.getElementById('product-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const productData = {
+            seller_id: currentUser,
+            name: document.getElementById('product-name').value,
+            description: document.getElementById('product-description').value,
+            price: parseFloat(document.getElementById('product-price').value),
+            category: document.getElementById('product-category').value,
+            condition: document.getElementById('product-condition').value,
+            quantity: parseInt(document.getElementById('product-quantity').value),
+            location: document.getElementById('product-location').value
+        };
+        
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/products', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(productData)
+            });
+            
+            if (response.ok) {
+                hideAddProductForm();
+                loadProducts();
+                alert('Product listed successfully!');
+            }
+        } catch (err) {
+            console.error('Error creating product:', err);
+        }
+    });
+
+    // Add to cart
+    async function addToCart(productId) {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/api/cart', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    user_id: currentUser,
+                    product_id: productId,
+                    quantity: 1
+                })
+            });
+            
+            if (response.ok) {
+                loadCart();
+                alert('Added to cart!');
+            }
+        } catch (err) {
+            console.error('Error adding to cart:', err);
+        }
+    }
+
+    // Load cart
+    async function loadCart() {
+        try {
+            const response = await fetch(`http://127.0.0.1:5000/api/cart?user_id=${currentUser}`);
+            cartItems = await response.json();
+            displayCart();
+        } catch (err) {
+            console.error('Error loading cart:', err);
+        }
+    }
+
+    // Display cart
+    function displayCart() {
+        const cartItemsDiv = document.getElementById('cart-items');
+        const cartTotal = document.getElementById('cart-total');
+        
+        if (cartItems.length === 0) {
+            cartItemsDiv.innerHTML = '<p>Your cart is empty</p>';
+            cartTotal.textContent = '0';
+            return;
+        }
+        
+        cartItemsDiv.innerHTML = cartItems.map(item => `
+            <div class="cart-item">
+                <h5>${item.product.name}</h5>
+                <p>₹${item.product.price} x ${item.quantity}</p>
+                <button onclick="removeFromCart(${item.id})">Remove</button>
+            </div>
+        `).join('');
+        
+        const total = cartItems.reduce((sum, item) => sum + (item.product.price * item.quantity), 0);
+        cartTotal.textContent = total.toFixed(2);
+    }
+
+    // Remove from cart
+    async function removeFromCart(cartId) {
+        try {
+            await fetch(`http://127.0.0.1:5000/api/cart/${cartId}`, {
+                method: 'DELETE'
+            });
+            
+            loadCart();
+        } catch (err) {
+            console.error('Error removing from cart:', err);
+        }
+    }
+
+    // Checkout
+    function checkout() {
+        if (cartItems.length === 0) {
+            alert('Your cart is empty!');
+            return;
+        }
+        
+        alert('Checkout functionality would be implemented here with payment integration!');
+        // This would integrate with payment gateway
+    }
+
+    // View product details
+    function viewProduct(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            alert(`Product Details:\n\nName: ${product.name}\nPrice: ₹${product.price}\nDescription: ${product.description}\nLocation: ${product.location}\nCondition: ${product.condition}`);
+        }
+    }
+
+    // Load initial data
+    loadForumPosts();
+    updateNotificationCount();
+    </script>
+
+</body>
+</html>
